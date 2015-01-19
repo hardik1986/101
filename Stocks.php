@@ -99,7 +99,7 @@
                 return false;
             });
              
-            //Remove
+            //Remov
             $('.form-horizontal').on('click', '.remove-txt', function(){
                 $(this).parent().parent().css( 'background-color', '#FF6C6C' );
                 $(this).parent().parent().fadeOut("slow", function() {
