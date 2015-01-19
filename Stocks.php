@@ -31,7 +31,7 @@
             if( isset( $_POST['boxes'] ) && !empty( $_POST['boxes'] ) ) :
                 $data = serialize( $_POST['boxes'] );
             else:
-                $data='a:2:{i:0;s:15:"http://jesin.tk";i:1;s:10:"Second Box";}';
+                $data='a:2:{i:0;s:15:"http://jesin.tk";i:1;s:10:"Secon Box";}';
             endif;
         ?>
             <form class="form-horizontal" role="form" method="post">
