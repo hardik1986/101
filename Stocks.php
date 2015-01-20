@@ -39,7 +39,7 @@
             <?php
          mysql_connect("localhost","simplecmsuser89",".Vg4jRi^*Sv3"); 
             mysql_select_db("simplecms89");
-            $row=mysql_query("SELECT * FROM stocks") or die(mysql_error());
+            $row=mysql_query("SELECT name FROM stocks") or die(mysql_error());
             $data = mysql_fetch_array($row);
             print_r ($data);
             if( !empty( $data ) )
