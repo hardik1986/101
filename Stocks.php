@@ -30,12 +30,18 @@
         <?php
             if( isset( $_POST['boxes'] ) && !empty( $_POST['boxes'] ) ) :
                 $data = serialize( $_POST['boxes'] );
-            else:
-                $data='a:2:{i:0;s:15:"http://jesin.tk";i:1;s:10:"Secon Box";}';
+           mysql_connect("localhost","simplecmsuser89",".Vg4jRi^*Sv3");
+           mysql_select_db("simplecms89");
+           mysql_query( "INSERT INTO `Stocks`(Name) VALUES ('" . mysql_real_escape_string( $data ) . "')" );
             endif;
         ?>
             <form class="form-horizontal" role="form" method="post">
             <?php
+         mysql_connect("localhost","simplecmsuser89",".Vg4jRi^*Sv3"); 
+            mysql_select_db("simplecms89");
+            $row=mysql_query("SELECT * FROM stocks") or die(mysql_error());
+            $data = mysql_fetch_array($row);
+            print_r ($data);
             if( !empty( $data ) )
             {
                 foreach( unserialize($data) as $key => $value ) :
@@ -67,13 +73,7 @@
             </form>
             <p><?php
                 if( isset($_POST['boxes']) && is_array($_POST['boxes']) )
-                {
-                    if( 5 < count( $_POST['boxes'] ) ) :
-                        echo 'Cheating Huh!';
-                    else :
-                        print 'Serialized String<br>' . htmlentities( serialize( $_POST['boxes'] ) );
-                    endif;
-                }
+              
             ?></p>
         </div>
     </div>
